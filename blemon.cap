@@ -1,0 +1,4 @@
+ble.recon on
+set ticker.period 2
+set ticker.commands clear; ble.show
+ticker on

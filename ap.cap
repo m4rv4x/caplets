@@ -1,0 +1,31 @@
+
+# interface to use to create the AP
+set wifi.ap.interface wlx503eaabc4365
+# interface for upstream connectivity, comment to disable
+set wifi.ap.upstream docker0
+## STEALTH CHANNEL 14 JAPAN RESTRICTED
+set wifi.ap.channel 14
+set wifi.ap.ssid F.SOCIETY
+set wifi.ap.bssid 00:00:00:00:00:01
+# comment to create a free access point
+#set wifi.ap.passphrase 12345678
+
+# enable recon to enable ap
+wifi.recon on
+# enable the ap
+wifi.ap
+
+# wait 2 seconds then set the session interface to the AP one
+sleep 2
+iface wlx503eaabc4365
+
+set net.sniff.local true
+set net.sniff.verbose false
+set net.sniff.filter not arp and not udp port 53
+
+# start recon for clients
+net.recon on
+# sniff
+net.sniff on
+# run the https-ui caplet because it's cool
+https-ui
