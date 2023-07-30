@@ -1,5 +1,5 @@
 # m4rv4x' caplets
-Some custom caplets for `bettercap` made by myself enjoy
+Some custom caplets for `bettercap` made with 💜
 
 ## Update caplets from bettercap
 ```
